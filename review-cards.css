@@ -1,0 +1,31 @@
+.tz .review-group .review-deck {
+  display:grid; grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(16px,2vw,28px); align-items:start; margin:22px 0;
+}
+.tz .review-group .review-deck article.story-card {
+  --edge:#a04470; --badge:#f9e4ed;
+  box-sizing:border-box; display:flex; flex-direction:column;
+  width:100%; min-width:0; min-height:350px; margin:0;
+  padding:clamp(20px,2.3vw,30px); color:#252439;
+  background:#fff; border:1px solid #bdb6c7; border-top:5px solid var(--edge);
+  border-radius:18px; box-shadow:0 4px 9px #24203b0e,0 12px 25px -12px #34224452;
+}
+.tz .review-deck article.story-card:nth-child(2n) { --edge:#654298; --badge:#eee7fa; }
+.tz .review-deck article.story-card:nth-child(3n) { --edge:#20735f; --badge:#dff3e9; }
+.tz .story-card header { display:flex; flex-direction:column; align-items:flex-start; gap:14px; }
+.tz .story-card header h3 { margin:0; font:700 21px/1.28 system-ui,sans-serif; }
+.tz .story-card header p { order:-1; margin:0; padding:4px 10px; border-radius:8px; color:#30253d; background:var(--badge); font:600 13px/1.5 system-ui,sans-serif; }
+.tz .review-deck .story-card blockquote { margin:18px 0; padding:0; font:400 16px/1.65 system-ui,sans-serif; }
+.tz .story-card details { display:block; margin-top:auto; }
+.tz .story-card details summary { display:inline-flex; align-items:center; gap:10px; min-height:44px; padding:5px 0; color:inherit; cursor:pointer; font:650 15px/1.4 system-ui,sans-serif; text-decoration:underline; text-underline-offset:4px; list-style:none; }
+.tz .story-card summary::-webkit-details-marker { display:none; }
+.tz .story-card summary::after { content:'+'; color:var(--edge); font-size:20px; }
+.tz .story-card details[open] summary::after { content:'−'; }
+.tz .story-card details:not([open]) summary .when-open,
+.tz .story-card details[open] summary .when-closed { display:none; }
+.tz .story-card details[open] summary .when-open { display:inline !important; }
+html[data-theme=dark] .tz .review-group .review-deck article.story-card { background:#302e42;color:#fcf8ff;border-color:#706982;border-top-color:var(--badge); }
+html[data-theme=dark] .tz .story-card details summary::after { color:var(--badge); }
+@media(max-width:900px){.tz .review-group .review-deck {grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:620px){.tz .review-group .review-deck {grid-template-columns:1fr;gap:16px;}
+.tz .review-group .review-deck article.story-card {min-height:0;} }
