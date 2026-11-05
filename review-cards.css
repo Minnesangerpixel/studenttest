@@ -17,10 +17,16 @@
 .tz .story-card header p { order:-1; margin:0; padding:4px 10px; border-radius:8px; color:#30253d; background:var(--badge); font:600 13px/1.5 system-ui,sans-serif; }
 .tz .review-deck .story-card blockquote { margin:18px 0; padding:0; font:400 16px/1.65 system-ui,sans-serif; }
 .tz .story-card details { display:block; margin-top:auto; }
-.tz .story-card details summary { display:inline-flex; align-items:center; gap:10px; min-height:44px; padding:5px 0; color:inherit; cursor:pointer; font:650 15px/1.4 system-ui,sans-serif; text-decoration:underline; text-underline-offset:4px; list-style:none; }
+.tz .story-card details summary { display:inline-flex; align-items:center; gap:10px; min-height:44px; padding:5px 0; color:inherit; cursor:pointer; font:650 15px/1.4 system-ui,sans-serif; text-decoration:none; list-style:none; }
 .tz .story-card summary::-webkit-details-marker { display:none; }
-.tz .story-card summary::after { content:'+'; color:var(--edge); font-size:20px; }
-.tz .story-card details[open] summary::after { content:'−'; }
+.tz .story-card summary::after {
+  content:""; width:8px; height:8px; box-sizing:border-box;
+  border:solid currentColor; border-width:0 2px 2px 0;
+  transform:translateY(-2px) rotate(45deg);
+}
+.tz .story-card details[open] summary::after {transform:translateY(2px) rotate(225deg)}
+.tz .story-card summary:focus-visible {outline:2px solid currentColor;outline-offset:3px;border-radius:4px}
+.tz .story-card summary:hover span {text-decoration:underline}
 .tz .story-card details:not([open]) summary .when-open,
 .tz .story-card details[open] summary .when-closed { display:none; }
 .tz .story-card details[open] summary .when-open { display:inline !important; }
@@ -29,3 +35,5 @@ html[data-theme=dark] .tz .story-card details summary::after { color:var(--badge
 @media(max-width:900px){.tz .review-group .review-deck {grid-template-columns:repeat(2,minmax(0,1fr));}}
 @media(max-width:620px){.tz .review-group .review-deck {grid-template-columns:1fr;gap:16px;}
 .tz .review-group .review-deck article.story-card {min-height:0;} }
+
+html[data-theme=dark] .tz .review-deck .story-card header p {color:#231d30;background:var(--badge)}

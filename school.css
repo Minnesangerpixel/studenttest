@@ -150,7 +150,7 @@ html[data-theme=dark] .tz article:nth-child(3){background:#54382e}
 .review blockquote { margin:14px 0; line-height:1.7; }
 .review figcaption { font-weight:650; }
 html[data-theme=dark] .review { background:#292639; }
-.tz .all-reviews { margin-top:18px; }
+
 
 /* Shared card geometry and responsive review rows. */
 .tz .grid > article { display:flex;flex-direction:column;min-width:0; }
@@ -169,6 +169,15 @@ html[data-theme=dark] .review { background:#292639; }
 html[data-theme=dark] .tz .story-card {background:#453042;color:#fff3fb}
 html[data-theme=dark] .tz .story-card:nth-child(2n) {background:#37334e}
 html[data-theme=dark] .tz .story-card:nth-child(3n) {background:#274139}
-html[data-theme=dark] .tz .story-card header p {color:#e0d9e2}
+
 @media(max-width:850px){.tz .review-deck {grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.tz .review-deck {grid-template-columns:minmax(0,1fr)}.tz .review-deck .story-card {min-height:auto}.tz .pages{width:100%;gap:12px}.tz .theme{margin-left:0}}
+
+.tz .lesson-art, .tz .problem svg {
+  aspect-ratio: 21 / 10;
+  height: auto;
+  object-fit: contain;
+  border-radius: 14px;
+}
+html[data-theme=dark] .tz .grid article,
+html[data-theme=dark] .tz .catalog-group article {border:1px solid #746d83;color:#fcf8ff}
