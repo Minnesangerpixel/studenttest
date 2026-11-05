@@ -1,120 +1,10 @@
-<style>
-.tz {
-  --ink: #162b35;
-  --lime: #ddfa75;
-  box-sizing: border-box;
-  max-width: 1220px;
-  margin: auto;
-  padding: clamp(18px,4vw,52px);
-  background: #f6f5ef;
-  color: var(--ink);
-  font: 16px/1.55 Inter, Arial, sans-serif;
-  border-radius: 24px;
-  container-type: inline-size;
-}
-.tz * { box-sizing: border-box; }
-.tz nav, .tz .brand, .tz .tools { display:flex; align-items:center; gap:14px; }
-.tz nav { justify-content:space-between; padding-bottom:18px; border-bottom:1px solid #c9cec7; }
-.tz .brand { font-size:22px; font-weight:750; letter-spacing:-1px; }
-.tz .mark { background:var(--ink); color:var(--lime); border-radius:10px; width:36px; text-align:center; font:italic 30px/36px Georgia,serif; }
-.tz a { color:inherit; }
-.tz .button { display:inline-block; width:fit-content; background:var(--ink); color:white; border-radius:100px; padding:12px 22px; text-decoration:none; font-weight:650; }
-.tz .button:hover { background:#305364; }
-.tz a:focus-visible, .tz summary:focus-visible { outline:3px solid #b85827; outline-offset:4px; }
-.tz .hero { display:grid; grid-template-columns:1.1fr 1fr; align-items:center; gap:clamp(22px,4vw,54px); padding:48px 0; }
-.tz h1,.tz h2,.tz h3,.tz p { color:inherit; margin:0; }
-.tz h1 { font:500 clamp(40px,7cqw,82px)/.99 Georgia,serif; letter-spacing:-.055em; }
-.tz h1 em { color:#466347; }
-.tz .intro { margin:22px 0; max-width:42ch; }
-.tz .tag { display:block; margin-bottom:18px; font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
-.tz .board { background:var(--ink); color:white; padding:24px; border-radius:24px; }
-.tz .board .tag { color:var(--lime); }
-.tz svg { display:block; width:100%; height:auto; }
-.tz .board p { margin:16px 0; font-size:18px; }
-.tz summary { cursor:pointer; color:var(--lime); font-weight:bold; }
-.tz details p { font-size:15px; }
-.tz h2 { font:500 clamp(28px,4cqw,44px)/1.1 Georgia,serif; letter-spacing:-.04em; margin-bottom:20px; }
-.tz .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
-.tz article { padding:24px; border-radius:18px; background:#e3e9db; }
-.tz article:nth-child(2) { background:#e0eaf1; }
-.tz article:nth-child(3) { background:#f1e3d7; }
-.tz article h3 { font:600 21px/1.2 Inter,Arial,sans-serif; margin-bottom:10px; }
-.tz footer { margin-top:30px; padding-top:18px; border-top:1px solid #c9cec7; font-size:14px; }
-@container (max-width:680px) {
-  .tz .hero,.tz .grid { grid-template-columns:1fr; }
-  .tz .hero { padding:30px 0; }
-  .tz .brand { font-size:18px; gap:7px; }
-  .tz .button { padding:10px 16px; }
-}
-
-.tz .board { min-width:0; }
-.tz .slides { display:flex; align-items:flex-start; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:thin; }
-.tz .problem { flex:0 0 100%; min-width:0; box-sizing:border-box; padding:3px; scroll-snap-align:start; }
-.tz .problem svg { background-color:#203640; background-image:linear-gradient(#384d55 1px,transparent 1px),linear-gradient(90deg,#384d55 1px,transparent 1px); background-size:22px 22px; border-radius:10px; }
-.tz .problem .answer, .tz .problem .hide-label { display:none; }
-.tz .problem:has(details[open]) .answer { display:inline; fill:#ddfa75; font-weight:bold; }
-.tz .problem:has(details[open]) .unknown, .tz details[open] .show-label { display:none; }
-.tz details[open] .hide-label { display:inline; }
-.tz .switcher { display:flex; align-items:center; gap:12px; margin:16px 0 4px; }
-.tz .switcher small { margin-right:auto; }
-.tz .switcher a { display:grid; place-items:center; width:44px; height:44px; border:1px solid #819598; border-radius:50%; text-decoration:none; color:white; }
-.tz .switcher a:hover { background:#344c55; }
-@media (prefers-reduced-motion:no-preference) { .tz .slides { scroll-behavior:smooth; } }
-
-/* The page background also reaches the space outside the theme's content column. */
-body:has(.tz), body:has(.tz) .wp-site-blocks {
-  background: radial-gradient(ellipse at 92% 12%, #b6f8dc, transparent 45%),
-              radial-gradient(ellipse at 4% 80%, #e4ccff, transparent 54%), #fff3dc;
-}
-.tz.tz {
-  --ink:#212242;
-  --lime:#dcff55;
-  background:transparent;
-  width:min(1160px, calc(100vw - 44px));
-  max-width:none;
-  margin-inline:calc(50% - min(580px, 50vw - 22px));
-  padding:clamp(12px,2vw,28px);
-}
-.tz h1 em { color:#5931bd; }
-.tz .mark, .tz a.button { background:#5734c5; }
-.tz a.button:hover { background:#402493; }
-.tz .board {
-  background:linear-gradient(145deg,#32316f,#191d42 78%);
-  box-shadow:0 18px 44px -20px #40308099;
-  border:1px solid #4e508b;
-  padding:clamp(16px,2vw,28px);
-}
-.tz .slides { scrollbar-width:none; overscroll-behavior-x:contain; }
-.tz .slides::-webkit-scrollbar { display:none; }
-.tz .problem { --accent:#deff5f; }
-.tz .problem:nth-child(2) { --accent:#66f2dd; }
-.tz .problem:nth-child(3) { --accent:#ffb981; }
-.tz .problem svg { background-color:#272853; background-image:linear-gradient(#3b3b67 1px,transparent 1px),linear-gradient(90deg,#3b3b67 1px,transparent 1px); }
-.tz .problem svg g[stroke] { stroke:var(--accent); fill:color-mix(in srgb,var(--accent) 18%,#272853); }
-.tz .problem .tag,.tz .problem summary { color:var(--accent); }
-.tz .problem:has(details[open]) .answer { fill:var(--accent); }
-.tz .problem summary { padding:8px 0; }
-.tz .switcher { border-top:1px solid #505077; padding-top:14px; }
-.tz .switcher small { margin-right:0; }
-.tz .meter { display:flex; gap:4px; margin-right:auto; }
-.tz .meter i { width:6px; height:6px; border-radius:8px; background:#77789c; }
-.tz .meter i.active { width:20px; background:var(--accent); }
-.tz .switcher a { border-color:#9899ba; font:22px/1 Arial,sans-serif; }
-.tz .switcher a:last-child { background:var(--accent); border-color:transparent; color:#212242; }
-.tz .switcher a:hover { box-shadow:0 0 0 3px #ffffff42; }
-.tz article { background:#d3ed83; }
-.tz article:nth-child(2) { background:#c5b6fa; }
-.tz article:nth-child(3) { background:#ffbb91; }
-@media(max-width:420px) { .tz.tz { width:94vw; margin-inline:calc(50% - 47vw); padding:8px; } }
-</style>
-<div class="tz">
-  <nav aria-label="Навигация"><span class="brand"><span class="mark" aria-hidden="true">ƒ</span> Точка знаний</span><a class="button" href="/teach/wp-login.php">Вход для учеников</a></nav>
-  <section class="hero">
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Школа математики · Точка знаний</title><link rel="stylesheet" href="school.css"><script src="theme.js"></script></head><body><div class="tz"><nav aria-label="Основное меню"><a class="brand" href="index.html"><span class="mark" aria-hidden="true">ƒ</span>Точка знаний</a><div class="pages"><a aria-current="page" href="index.html">Главная</a><a href="courses.html">Курсы</a><a href="practice.html">Практика</a><a href="notes.html">Справочник</a><button type="button" class="theme" aria-pressed="false">Тёмная тема</button></div></nav><main><section class="hero">
     <div>
       <span class="tag">Онлайн-школа «Точка знаний»</span>
       <h1>Курсы математики<br><em>для школьников</em></h1>
       <p class="intro">У каждой программы своя цель. На школьном курсе разбираемся с темами, которые вызывают трудности на уроках. На курсах ОГЭ и ЕГЭ учимся применять эти знания в экзаменационных заданиях.</p>
-      <a class="button" href="#tz-courses">Посмотреть курсы ↓</a>
+      <a class="button" href="courses.html">Посмотреть курсы ↓</a>
     </div>
     <div class="board"><div class="slides"><section class="problem" id="tz-problem-1" aria-label="Задача 1. Гипотенуза">
       <div class="tag">Задача из курса · Теорема Пифагора</div>
@@ -149,30 +39,9 @@ body:has(.tz), body:has(.tz) .wp-site-blocks {
   </section>
   <section id="tz-courses"><h2>Какой курс вам подойдёт?</h2>
     <div class="grid">
-      <article><h3>Математика для школы</h3><p>Для тех, кто теряется в дробях, процентах и уравнениях. На курсе учимся читать условие, записывать его на языке математики и проверять свой ответ.</p></article>
-      <article><h3>Математика ОГЭ</h3><p>Для девятиклассников. Повторяем алгебру и геометрию, читаем графики и разбираем задачи, где нужно показать ход решения.</p></article>
-      <article><h3>Математика ЕГЭ</h3><p>Для старшеклассников. Отрабатываем вероятность, уравнения и функции. Для профильного уровня подробнее разбираем тригонометрию и отбор корней.</p></article>
+      <article><h3>Математика для школы</h3><p>Для тех, кто теряется в дробях, процентах и уравнениях. На курсе учимся читать условие, записывать его на языке математики и проверять свой ответ.</p><a href="courses.html#course-1">Программа курса →</a></article>
+      <article><h3>Математика ОГЭ</h3><p>Для девятиклассников. Повторяем алгебру и геометрию, читаем графики и разбираем задачи, где нужно показать ход решения.</p><a href="courses.html#course-2">Программа курса →</a></article>
+      <article><h3>Математика ЕГЭ</h3><p>Для старшеклассников. Отрабатываем вероятность, уравнения и функции. Для профильного уровня подробнее разбираем тригонометрию и отбор корней.</p><a href="courses.html#course-3">Программа курса →</a></article>
     </div>
   </section>
-  <footer>Уже учитесь в «Точке знаний»? <a href="/teach/wp-login.php">Войдите в аккаунт</a> с логином и паролем, которые вы получили от школы.</footer>
-</div>
-
-<script>
-(() => {
-  const page = document.currentScript.previousElementSibling;
-  const track = page && page.querySelector('.slides');
-  if (!track) return;
-  track.addEventListener('click', event => {
-    const arrow = event.target.closest('.switcher a');
-    if (!arrow) return;
-    const target = track.querySelector(arrow.hash);
-    if (!target) return;
-    event.preventDefault();
-    const offset = target.getBoundingClientRect().left - track.getBoundingClientRect().left;
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    track.scrollTo({left: track.scrollLeft + offset, behavior: reduced ? 'instant' : 'smooth'});
-    const nextFocus = target.querySelector('[aria-label="' + arrow.getAttribute('aria-label') + '"]');
-    if (nextFocus) nextFocus.focus({preventScroll:true});
-  });
-})();
-</script>
+  </main><footer>Точка знаний · Онлайн-школа математики</footer></div><script src="slider.js"></script></body></html>
