@@ -133,3 +133,12 @@ html[data-theme=dark] .tz article{background:#32422c}
 html[data-theme=dark] .tz article:nth-child(2){background:#403459}
 html[data-theme=dark] .tz article:nth-child(3){background:#54382e}
 @media(max-width:620px){.tz nav{align-items:flex-start;gap:12px}.tz .pages{width:100%;gap:12px;font-size:14px}.theme{margin-left:auto}.tz .hero{grid-template-columns:minmax(0,1fr)}}
+
+.tz .lesson-art { display:block;width:100%;height:auto;border-radius:12px;margin-bottom:18px; }
+.catalog-group { margin:32px 0 48px; }
+.tz .catalog-group > p { margin-bottom:18px; }
+.tz .catalog-group article { display:flow-root; }
+.tz .catalog-group h3 { font-size:25px; }
+@media(min-width:720px) {
+ .tz .catalog-group .lesson-art { float:right;width:38%;margin:0 0 16px 32px; }
+}
